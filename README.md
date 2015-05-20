@@ -1,2 +1,2 @@
-# rqld
-RQL definitions
+# raddled
+Raddle definitions

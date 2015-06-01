@@ -1,5 +1,5 @@
 define(head,(any*,any),()),
 define(tail,(any*,any*),()),
 define(append,(any*,any*),(any)),
-define(is-empty,(any*,boolean),()),
+define(empty,(any*,boolean),()),
 define(map-transform,(any*,any*),(any,(any*)))

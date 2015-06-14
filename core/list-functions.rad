@@ -1,4 +1,0 @@
-define(head,(any*,any),()),
-define(tail,(any*,any*),()),
-define(append,(any*,any*),(any)),
-define(empty,(any*,boolean),())

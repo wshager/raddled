@@ -1,2 +1,0 @@
-define(map-new,(null,map),()),
-define(map-transform,(map,map),(any,(any*)))

@@ -1,4 +1,0 @@
-define(fold-left,(any*,any*),(any*,(any*))),
-define(unfold,(any*,any*),((any*),(any*))),
-define(unfold,(any*,any*),((any*),(any*),(any*),(any*),(any*)))
-define(unfold,(any*,any*),((any*),(any*),(any*),(any*),(any*),any*))

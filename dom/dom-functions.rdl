@@ -1,0 +1,3 @@
+define(add-attributes,(node,map),node),
+define(by-id,(string),node),
+define(create,(string,map),node)

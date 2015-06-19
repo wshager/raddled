@@ -1,0 +1,6 @@
+define(head,(any*),any),
+define(tail,(any*),any*),
+define(size,(any*),number),
+define(append,(any*,any),any*),
+define(filter,(function((any*),boolean)),any*),
+define(fold-left,(any*,any*,function((any*,any*),any*)),any*)

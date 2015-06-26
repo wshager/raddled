@@ -1,3 +1,5 @@
-define(add-attributes,(node,map),node),
-define(by-id,(string),node),
-define(create,(string,map),node)
+define(element,(string,map),element),
+define(attribute,(string,map),attribute),
+define(query,(string),element*),
+define(place,(element,string,element),element),
+define(remove,(element),element)

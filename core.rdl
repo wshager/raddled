@@ -3,4 +3,5 @@ use(core/higher-order-functions),
 use(core/numeric-functions),
 use(core/string-assembly-functions),
 use(core/string-regex-functions),
-use(core/string-value-functions)
+use(core/string-value-functions),
+use(core/external-access-functions)

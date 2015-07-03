@@ -1,1 +1,2 @@
+define(for-each,(any*,function((any*),any*)),any*),
 define(fold-left,(any*,any*,function((any*,any*),any*)),any*)

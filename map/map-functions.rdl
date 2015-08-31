@@ -1,2 +1,2 @@
-define(map-new,(),map),
-define(map-transform,(map,any,(any*)),map)
+define(new,(),map),
+define(transform,(map,any,(any*)),map)

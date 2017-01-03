@@ -94,8 +94,6 @@ core:define($,xqc:escape-for-regex,(),(core:item($,key)),core:string(),((core:it
 
 core:define($,xqc:unary-op,(),(core:item($,op)),core:item(),(core:iff(core:eq(round($op),17),$op,core:add($op,9))));
 
-core:define($,xqc:op-int,(),(core:item($,op)),core:item(),(core:decimal(replace($op,"^=#(\p{N}+)#?\p{N}*=$","$1"))));
-
 core:define($,xqc:op-num,(),(core:item($,op)),core:decimal(),(core:iff(core:ne($op,""),core:decimal(replace($op,"^=#(\p{N}+)#?(\p{N}*)=$","$1.$2")),0)));
 
 core:define($,xqc:op-str,(),(core:item($,op)),core:item(),(concat("=#",replace(string($op),"\.","#"),"=")))

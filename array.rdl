@@ -1,0 +1,15 @@
+$*(array,"http://www.w3.org/2005/xpath-functions/array");
+
+$>(array:head,function((array(*)),item()*);
+
+$>(array:tail,function((array(*)),array(*));
+
+$>(array:size,function((array(*)),integer());
+
+$>(array:append,function((array(*),item()*),array(*));
+
+$>(array:for-each,function((array(*),function((item()*),item()*)),array(*));
+
+$>(array:filter,function((array(*),function((array(*)),boolean())),array(*));
+
+$>(array:fold-left,function((array(*),item()*,function((item()*,item()*),item()*)),item()*)

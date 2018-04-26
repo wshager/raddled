@@ -1,4 +1,13 @@
-module(n,http://raddle.org/n,implements native syntax elements from xquery as functions),
-use(op),
-define(n:if,(boolean,item()*,item()*),item()*),
-define(n:eq,(item()*,item()*),boolean,op:equals($1,$2))
+$*(n,"http://raddle.org/n");
+$<(fn,"http://www.w3.org/2005/xpath-functions","./fn");
+$<(op,"http://www.w3.org/2005/xpath-functions/op","./op");
+$>(n:eq,function((atomic()?,atomic()?),boolean()),{if(n:and(instance-of($1,numeric()),instance-of($2,numeric())),{
+    op:numeric-equal($1,$2)
+},{
+    if(n:and(instance-of($1,string()),instance-of($2,string())),{
+        op:numeric-equal(fn:boolean(fn:compare($1,$2)),0)
+    },{
+        fn:error(err:XPTY0004)
+    })
+})});
+$>(n:geq,function((atomic()*,atomic()*),boolean()));

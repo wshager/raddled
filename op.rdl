@@ -1,3 +1,4 @@
-module(op,http://www.w3.org/2005/xpath-functions/op,op),
-use(op/numeric-arithmetic-operators),
-use(op/numeric-comparison-operators)
+$*(op,"http://www.w3.org/2005/xpath-functions/op"),
+$>(op:numeric-equal,function((numeric(),numeric()),boolean())),
+$>(op:numeric-less-than,function((numeric(),numeric()),boolean())),
+$>(op:numeric-greater-than,function((numeric(),numeric()),boolean()))

@@ -1,93 +1,95 @@
-core:define($,fn:count,(),(core:item($,1)*),core:integer());
+$*(fn,"http://www.w3.org/2005/xpath-functions");
 
-core:define($,fn:avg,(),(core:atomic($,1)*),core:item()?);
+$>(fn:count,function((item()*),integer()));
 
-core:define($,fn:max,(),(core:atomic($,1)*),core:item()?);
+$>(fn:avg,function((atomic()*),item()?));
 
-core:define($,fn:min,(),(core:atomic($,1)*),core:item()?);
+$>(fn:max,function((atomic()*),item()?));
 
-core:define($,fn:sum,(),(core:item($,1)*),core:item());
+$>(fn:min,function((atomic()*),item()?));
 
-core:define($,fn:doc,(),(core:string($,1)?),core:element()?);
+$>(fn:sum,function((item()*),item()));
 
-core:define($,fn:collection,(),(core:string($,1)?),core:element()*);
+$>(fn:doc,function((string()?),element()?));
 
-core:define($,fn:for-each,(),(core:item($,1),core:function($,2,(core:item()),core:item()*)),core:item()*);
+$>(fn:collection,function((string()?),element()*));
 
-core:define($,fn:filter,(),(core:item($,1),core:function($,2,(core:item()),core:item()*)),core:item()*);
+$>(fn:for-each,function((item(),function((item()),item()*)),item()*));
 
-core:define($,fn:fold-left,(),(core:item($,1),core:item($,2),core:function($,3,(core:item()*,core:item()),core:item()*)),core:item()*);
+$>(fn:filter,function((item(),function((item()),item()*)),item()*));
 
-core:define($,fn:fold-right,(),(core:item($,1),core:item($,2),core:function($,3,(core:item()*,core:item()),core:item()*)),core:item()*);
+$>(fn:fold-left,function((item(),item(),function((item()*,item()),item()*)),item()*));
 
-core:define($,fn:sort,(),(core:item($,1),core:function($,2,(core:item()),core:item()*)),core:item()*);
+$>(fn:fold-right,function((item(),item(),function((item()*,item()),item()*)),item()*));
 
-core:define($,fn:apply,(),(core:function($,1,*),core:array($,2,*)),core:item()*);
+$>(fn:sort,function((item(),function((item()),item()*)),item()*));
 
-core:define($,fn:abs,(),(core:numeric($,1)?),core:numeric()?);
+$>(fn:apply,function((function(*),array(*)),item()*));
 
-core:define($,fn:ceiling,(),(core:numeric($,1)?),core:numeric()?);
+$>(fn:abs,function((numeric()?),numeric()?));
 
-core:define($,fn:floor,(),(core:numeric($,1)?),core:numeric()?);
+$>(fn:ceiling,function((numeric()?),numeric()?));
 
-core:define($,fn:round,(),(core:numeric($,1)?),core:numeric()?);
+$>(fn:floor,function((numeric()?),numeric()?));
 
-core:define($,fn:round-half-to-even,(),(core:numeric($,1)?),core:numeric()?);
+$>(fn:round,function((numeric()?),numeric()?));
 
-core:define($,fn:codepoints-to-string,(),(core:integer($,1)*),core:string());
+$>(fn:round-half-to-even,function((numeric()?),numeric()?));
 
-core:define($,fn:string-to-codepoints,(),(core:string($,1)?),core:integer()*);
+$>(fn:codepoints-to-string,function((integer()*),string()));
 
-core:define($,fn:tokenize,(),(core:string($,1)?,core:string($,2)),core:string()*);
+$>(fn:string-to-codepoints,function((string()?),integer()*));
 
-core:define($,fn:replace,(),(core:string($,1)?,core:string($,2),core:string($,3)),core:string());
+$>(fn:tokenize,function((string()?,string()),string()*));
 
-core:define($,fn:matches,(),(core:string($,1)?,core:string($,2)),core:boolean());
+$>(fn:replace,function((string()?,string(),string()),string()));
 
-core:define($,fn:analyze-string,(),(core:string($,1)?,core:string($,2)),core:element());
+$>(fn:matches,function((string()?,string()),boolean()));
 
-core:define($,fn:concat,(),(core:atomic($,...1)?),core:string());
+$>(fn:analyze-string,function((string()?,string()),element()));
 
-core:define($,fn:string-join,(),(core:atomic($,1)*),core:string());
+$>(fn:concat,function((atomic()?,atomic()?,...),string()));
 
-core:define($,fn:string-join,(),(core:atomic($,1)*,core:string($,2)),core:string());
+$>(fn:string-join,function((atomic()*),string()));
 
-core:define($,fn:substring,(),(core:string($,1)?,core:double($,2)),core:string());
+$>(fn:string-join,function((atomic()*,string()),string()));
 
-core:define($,fn:substring,(),(core:string($,1)?,core:double($,2),core:double($,3)),core:string());
+$>(fn:substring,function((string()?,double()),string()));
 
-core:define($,fn:string-length,(),(core:string($,1)?),core:integer());
+$>(fn:substring,function((string()?,double(),double()),string()));
 
-core:define($,fn:upper-case,(),(core:string($,1)?),core:string());
+$>(fn:string-length,function((string()?),integer()));
 
-core:define($,fn:lower-case,(),(core:string($,1)?),core:string());
+$>(fn:upper-case,function((string()?),string()));
 
-core:define($,fn:function-lookup,(),(core:QName($,1)?,core:integer($,2)),core:function(*));
+$>(fn:lower-case,function((string()?),string()));
 
-core:define($,fn:name,(),(core:node($,1)?),core:string());
+$>(fn:function-lookup,function((QName()?,integer()),function(*)));
 
-core:define($,fn:empty,(),(core:item($,1)*),core:boolean());
+$>(fn:name,function((node()?),string()));
 
-core:define($,fn:exists,(),(core:item($,1)*),core:boolean());
+$>(fn:empty,function((item()*),boolean()));
 
-core:define($,fn:head,(),(core:item($,1)*),core:item()?);
+$>(fn:exists,function((item()*),boolean()));
 
-core:define($,fn:tail,(),(core:item($,1)*),core:item()*);
+$>(fn:head,function((item()*),item()?));
 
-core:define($,fn:insert-before,(),(core:item($,1)*,core:integer($,2),core:item($,3)*),core:item()*);
+$>(fn:tail,function((item()*),item()*));
 
-core:define($,fn:remove,(),(core:item($,1)*,core:integer($,2)),core:item()*);
+$>(fn:insert-before,function((item()*,integer(),item()*),item()*));
 
-core:define($,fn:reverse,(),(core:item($,1)*),core:item()*);
+$>(fn:remove,function((item()*,integer()),item()*));
 
-core:define($,fn:subsequence,(),(core:item($,1)*,core:double($,2)),core:item()*);
+$>(fn:reverse,function((item()*),item()*));
 
-core:define($,fn:subsequence,(),(core:item($,1)*,core:double($,2),core:double($,3)),core:item()*);
+$>(fn:subsequence,function((item()*,double()),item()*));
 
-core:define($,fn:index-of,(),(core:atomic($,1)*,core:atomic($,2)),core:integer()*);
+$>(fn:subsequence,function((item()*,double(),double()),item()*));
 
-core:define($,fn:zero-or-one,(),(core:item($,1)*),core:item()?);
+$>(fn:index-of,function((atomic()*,atomic()),integer()*));
 
-core:define($,fn:one-or-more,(),(core:item($,1)*),core:item()+);
+$>(fn:zero-or-one,function((item()*),item()?));
 
-core:define($,fn:exactly-one,(),(core:item($,1)*),core:item());
+$>(fn:one-or-more,function((item()*),item()+));
+
+$>(fn:exactly-one,function((item()*),item()));

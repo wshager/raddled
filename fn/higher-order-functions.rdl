@@ -1,2 +1,0 @@
-define(for-each,(any*,((any*),any*)),any*),
-define(fold-left,(any*,any*,((any*,any*),any*)),any*)

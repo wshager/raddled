@@ -1,6 +1,6 @@
 $*(fn,"http://www.w3.org/2005/xpath-functions");
 
-$>(fn:count,function((item()*),integer()));
+$>(fn:count,function((item()*),double()));
 
 $>(fn:avg,function((atomic()*),item()?));
 
@@ -14,7 +14,9 @@ $>(fn:doc,function((string()?),element()?));
 
 $>(fn:collection,function((string()?),element()*));
 
-$>(fn:for-each,function((item(),function((item()),item()*)),item()*));
+$>(fn:for-each,function((function((item()),item()*)),function(*)));
+
+$>(fn:for-each,function((item()*,function((item()),item()*)),item()*));
 
 $>(fn:filter,function((item(),function((item()),item()*)),item()*));
 
@@ -24,7 +26,7 @@ $>(fn:fold-right,function((item(),item(),function((item()*,item()),item()*)),ite
 
 $>(fn:sort,function((item(),function((item()),item()*)),item()*));
 
-$>(fn:apply,function((function(*),array(*)),item()*));
+$>(fn:apply,function((function(),array()),item()*));
 
 $>(fn:abs,function((numeric()?),numeric()?));
 
@@ -36,9 +38,9 @@ $>(fn:round,function((numeric()?),numeric()?));
 
 $>(fn:round-half-to-even,function((numeric()?),numeric()?));
 
-$>(fn:codepoints-to-string,function((integer()*),string()));
+$>(fn:codepoints-to-string,function((double()*),string()));
 
-$>(fn:string-to-codepoints,function((string()?),integer()*));
+$>(fn:string-to-codepoints,function((string()?),double()*));
 
 $>(fn:tokenize,function((string()?,string()),string()*));
 
@@ -58,13 +60,13 @@ $>(fn:substring,function((string()?,double()),string()));
 
 $>(fn:substring,function((string()?,double(),double()),string()));
 
-$>(fn:string-length,function((string()?),integer()));
+$>(fn:string-length,function((string()?),double()));
 
 $>(fn:upper-case,function((string()?),string()));
 
 $>(fn:lower-case,function((string()?),string()));
 
-$>(fn:function-lookup,function((QName()?,integer()),function(*)));
+$>(fn:function-lookup,function((QName()?,double()),function()));
 
 $>(fn:name,function((node()?),string()));
 
@@ -76,9 +78,9 @@ $>(fn:head,function((item()*),item()?));
 
 $>(fn:tail,function((item()*),item()*));
 
-$>(fn:insert-before,function((item()*,integer(),item()*),item()*));
+$>(fn:insert-before,function((item()*,double(),item()*),item()*));
 
-$>(fn:remove,function((item()*,integer()),item()*));
+$>(fn:remove,function((item()*,double()),item()*));
 
 $>(fn:reverse,function((item()*),item()*));
 
@@ -86,10 +88,14 @@ $>(fn:subsequence,function((item()*,double()),item()*));
 
 $>(fn:subsequence,function((item()*,double(),double()),item()*));
 
-$>(fn:index-of,function((atomic()*,atomic()),integer()*));
+$>(fn:index-of,function((atomic()*,atomic()),double()*));
 
 $>(fn:zero-or-one,function((item()*),item()?));
 
 $>(fn:one-or-more,function((item()*),item()+));
 
 $>(fn:exactly-one,function((item()*),item()));
+
+$>(fn:true,function((),boolean()));
+
+$>(fn:false,function((),boolean()));

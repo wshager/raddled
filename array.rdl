@@ -1,15 +1,25 @@
 $*(array,"http://www.w3.org/2005/xpath-functions/array");
 
-$>(array:head,function((array(*)),item()*);
+$>(array:array,function((item(),...),array(*)));
 
-$>(array:tail,function((array(*)),array(*));
+$>(array:head,function((array(*)),item()));
 
-$>(array:size,function((array(*)),integer());
+$>(array:tail,function((array(*)),array(*)));
 
-$>(array:append,function((array(*),item()*),array(*));
+$>(array:size,function((array(*)),integer()));
 
-$>(array:for-each,function((array(*),function((item()*),item()*)),array(*));
+$>(array:append,function((array(*),item()),array(*)));
 
-$>(array:filter,function((array(*),function((array(*)),boolean())),array(*));
+$>(array:insert-before,function((array(*),atomic(),item()),array(*)));
 
-$>(array:fold-left,function((array(*),item()*,function((item()*,item()*),item()*)),item()*)
+$>(array:for-each,function((array(*),function((item()),item()*)),array(*)));
+
+$>(array:filter,function((array(*),function((array(*)),boolean())),array(*)));
+
+$>(array:fold-left,function((array(*),item()*,function((item()*,item()),item()*)),item()*));
+
+$>(array:join,function((array(*)*),array(*)));
+
+$>(array:subarray,function((array(*),xs:integer),array(*)));
+
+$>(array:subarray,function((array(*),xs:integer,xs:integer),array(*)));

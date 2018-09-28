@@ -1,13 +1,26 @@
 $*(n,"http://raddle.org/n");
-$<(fn,"http://www.w3.org/2005/xpath-functions","./fn");
-$<(op,"http://www.w3.org/2005/xpath-functions/op","./op");
-$>(n:eq,function((atomic()?,atomic()?),boolean()),{if(n:and(instance-of($1,numeric()),instance-of($2,numeric())),{
-    op:numeric-equal($1,$2)
-},{
-    if(n:and(instance-of($1,string()),instance-of($2,string())),{
-        op:numeric-equal(fn:boolean(fn:compare($1,$2)),0)
-    },{
-        fn:error(err:XPTY0004)
-    })
-})});
+$<(fn,"./fn",true());
+$>(n:atomic,function((),function((item()),atomic())));
+$>(n:eq,function((atomic()?,atomic()?),boolean()));
+$>(n:gt,function((atomic()?,atomic()?),boolean()));
+$>(n:lt,function((atomic()?,atomic()?),boolean()));
+$>(n:ge,function((atomic()?,atomic()?),boolean()));
+$>(n:le,function((atomic()?,atomic()?),boolean()));
 $>(n:geq,function((atomic()*,atomic()*),boolean()));
+$>(n:add,function((numeric()?,numeric()?),numeric()?));
+$>(n:subtract,function((numeric()?,numeric()?),numeric()?));
+$>(n:multiply,function((numeric()?,numeric()?),numeric()?));
+$>(n:div,function((numeric()?,numeric()?),numeric()?));
+$>(n:idiv,function((numeric()?,numeric()?),integer()?));
+$>(n:mod,function((numeric()?,numeric()?),numeric()?));
+$>(n:plus,function((numeric()?),numeric()?));
+$>(n:minus,function((numeric()?),numeric()?));
+$>(n:instance-of,function((item(),item()),boolean()));
+$>(n:interval,function((number()),number()+));
+$>(n:cast-as,function((item(),item()),item()));
+$>(n:call,function((function(*),item()*,...),item()));
+$>(n:from,function((item()),item()));
+$>(n:if,function((boolean(),function((),item()),function((),item())),item()));
+$>(n:range,function((numeric()),numeric()+));
+$>(n:range,function((numeric(),numeric()),numeric()+));
+$>(n:to,function((numeric(),numeric()),numeric()+));
